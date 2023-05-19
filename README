@@ -1,48 +1,81 @@
-dwm - dynamic window manager
+custom dwm setup
 ============================
-dwm is an extremely fast, small, and dynamic window manager for X.
+This repository includes dwm and the modifications I made for my setup.
+
+I used this to patch my Xubuntu 22 minimal install and replace the lightdm window manager by dwm.
 
 
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
+These include the following patches:
+ * 
+
+
+Requirements before building
+----------------------------
+Although you do not *have* to build it, in order to build dwm by yourself like I did, you will need the following packages:
+```
+sudo apt install build-essential suckless-tools libx11-dev libxinerama-dev libxft-dev stterm
+```
+ * stterm is the suckless st simple terminal, and is not required if you plan to use the xfce4-terminal instead
+ * In case I missed it, you might need sharutils too
+
 
 
 Installation
 ------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+There are two ways to install dwm.
+The first one, the easiest, is to just download the binaries from apt:
+```
+sudo apt install dwm suckless-tools feh
+```
+This binary of dwm is configured to use xfce4-terminal already, so you do not need st.
+dmenu is included in the suckless-tools package
+feh is only needed if you want a background wallpaper instead of a black screen (protip: you won't be able to test terminal transparency over a black background).
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+Note:
+	When replacing xfce4 and lightdm by dwm, you will probably need to use the terminals accessed using Ctrl+Alt+[1-9]
+	The default GUI screen is accessed using Ctrl+Alt+[7]
 
-    make clean install
+To run dwm, I used these steps:
+Trying dwm without disabling lightdm permanently can be done with the steps:
+ * in /etc/X11/default-display-manager, replace the path to lightdm (/usr/sbin/lightdm in my case) with the path to dwm (/usr/bin/dwm after installing dwm)
+ * in ~/.xinitrc, write the following lines:
+ 	```
+ 		~/.fehbg # if you already used feh to make a background
+ 		exec dwm
+ 	```
+ * from a non-graphic terminal, switch off lightdm: sudo service lightdm stop
+ * from the same terminal, run xinit to start dwm. If you installed dmenu, you can start new processes using Mod+p (Mod being Alt by default)
+The dwm default shortcuts are described [here](https://gist.github.com/erlendaakre/12eb90eef84a3ab81f7b531e516c9594)
 
-
-Running dwm
------------
-Add the following line to your .xinitrc to start dwm using startx:
-
-    exec dwm
-
-In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
-
-    DISPLAY=foo.bar:1 exec dwm
-
-(This will start dwm on display :1 of the host foo.bar.)
-
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
+Note: I probably haven't entirely tested this part, I don't remember restarting my computer since I installed dwm
+Note: Most of these steps are easily reversible. To restore lightdm and xfce4, you just have to reverse these steps and quit dwm with Mod+Shift+q
+Note: I am not entirely sure I did not do unnecessary changes, like stopping lightdm manually instead of restarting my computer
 
 
-Configuration
+If you want to configure dwm by yourself (or just use my version), you just have to build and install dwm in order to replace previously existing (apt) dwm version.
+If you already have the requirements to build dwm, you can install it with:
+```
+sudo make clean install
+```
+Note: I am not sure sudo is required, as I did not test without yet
+
+
+
+
+Background
+----------
+I used feh to run the background.
+Although using it is simple, the exact command you use depends on how much your wallpaper matches your screen resolution.
+```man feh``` and a /--bg-scale query will set you around the parameters you will need to use.
+The basic usage is something like this: ```feh --bg-fill image.png```
+
+Once you have used feh to load a background wallpaper from the terminal, you can add ```~/.fehbg``` to the .xinitrc, before ```exec dwm``` to make the changes persistant
+
+
+Customization
 -------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+dwm can be patched with ```patch -p1 < patches/<patch>```,
+and can be configured by editing config.h
+
+The config.def.h is a generated default config, and is modified by patches.
+If you add new patches, you will have to regenerate config.h before applying changes like I did.
