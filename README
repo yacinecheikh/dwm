@@ -19,7 +19,17 @@ sudo apt install build-essential suckless-tools libx11-dev libxinerama-dev libxf
 ```
  * stterm is the suckless st simple terminal, and is not required if you plan to use the xfce4-terminal instead
  * In case I missed it, you might need sharutils too
- * I also needed libx11-xcb-dev and libxcb-res0-dev (don't ask me why, dwm compiled without it the first time, but not after I applied patches with no include)
+
+If you use my patched code, the swallow patch requires dependencies that are not in the package manager:
+ * libxcb
+ * Xlib-libxcb
+ * xcb-res
+By googling the headers needed, I found these (debian) packages that provide the same headers:
+ * libx11-xcb-dev
+ * libxcb-res0-dev
+
+If you want to do it the proper way, the libraries can be built from source
+
 
 
 Installation
