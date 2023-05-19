@@ -101,8 +101,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_i,      view_adjacent,  { .i = +1 } },
-	{ MODKEY,                       XK_u,      view_adjacent,  { .i = -1 } },
+	{ MODKEY,                       XK_i,      shiftview,  { .i = +1 } },
+	{ MODKEY,                       XK_u,      shiftview,  { .i = -1 } },
 };
 
 /* button definitions */
@@ -120,7 +120,7 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkTagBar,            0,              Button4,        view_adjacent,  { .i = -1 } },
-	{ ClkTagBar,            0,              Button5,        view_adjacent,  { .i = +1 } },
+	{ ClkTagBar,            0,              Button4,        shiftview,  { .i = -1 } },
+	{ ClkTagBar,            0,              Button5,        shiftview,  { .i = +1 } },
 };
 
