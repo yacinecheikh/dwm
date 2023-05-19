@@ -9,6 +9,7 @@ These include the following patches:
  * swallow
  * full gaps
  * next prev tag (shiftview.c)
+ * fibonacci layout
 
 
 Requirements before building
