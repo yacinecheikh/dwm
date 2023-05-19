@@ -6,7 +6,9 @@ I used this to patch my Xubuntu 22 minimal install and replace the lightdm windo
 
 
 These include the following patches:
- * 
+ * swallow
+ * full gaps
+ * next prev tag (shiftview.c)
 
 
 Requirements before building
