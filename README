@@ -1,5 +1,5 @@
-custom dwm setup
-============================
+## custom dwm setup
+
 This repository includes dwm and the modifications I made for my setup.
 
 I used this to patch my Xubuntu 22 light install and use dwm instead of xfce4.
@@ -12,11 +12,14 @@ This version of dwm includes the following patches:
  * next prev tag (shiftview.c)
  * fibonacci layout
 
-I am currently working on transparency with xcompmgr.
+I also used the following programs to complete the setup:
+ * feh
+ * dmenu
+ * xcompmgr
 
 
-Requirements before building
-----------------------------
+### Requirements before building
+
 Although you can try dwm without building it, you have to build it by yourself if you want to customize it like I did.
 In order to build dwm, you will need the following packages:
 ```
@@ -37,8 +40,7 @@ If you want to do it the proper way, the libraries can be built from source
 
 
 
-Installation
-------------
+## Installation
 There are two ways to install dwm.
 The first one, the easiest, is to just download the binaries from apt:
 ```
@@ -77,7 +79,7 @@ To setup your own background wallpaper, see the Background section below.
 To customize dwm and install your own patches, see the Customization section below.
 
 
-Background
+### Background
 ----------
 I used feh to run the background.
 Although using it is simple, the exact command you use depends on how much your wallpaper matches your screen resolution.
@@ -86,9 +88,24 @@ The basic usage is something like this: ```feh --bg-fill image.png```
 
 Once you have used feh to load a background wallpaper from the terminal, you can add ```~/.fehbg``` to ~/.xprofile (this file is loaded by lightdm after login) the wallpaper persistant.
 
+### Transparency
+Adding transparency was [far simpler than I expected](https://wiki.archlinux.org/title/xcompmgr).
+If you have the same setup as mine (Ubuntu LTS 22.04), the only thing to do is install xcompmgr:
+```
+sudo apt install xcompmgr
+```
+run it
+```
+xcompmgr -c
+```
+and add it to .xprofile with the feh background command
+```
+~/.fehbg
+xcompmgr -c &
+```
 
-Customization
--------------
+
+### Customization
 dwm can be further patched with ```patch -p1 < patches/<patch>```,
 and can be configured by editing config.h.
 
