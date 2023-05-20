@@ -59,8 +59,9 @@ dmenu, the app starting menu for dwm, is included in the suckless-tools package
 feh is needed unless you want to keep the wallpaper of the login screen theme. I prefer having a different wallpaper once logged in.
 
 
-Note:
+#### Unrelated discovery while testing:
 
+```
 While testing, I found out that dwm can be run from the terminal with xinit, after stopping the graphical interface lightdm with ```sudo service stop lightdm``` and manually writing ~/.xinitrc with ```numlockx on``` to enable the numpad, ```~/.fehbg``` to enable the background and ```exec dwm``` to start dwm.
 
 Since I didn't know the difference between a display manager and a window manager, I also replaced the path to lightdm in /etc/X11/default-display-manager with /usr/bin/dwm
@@ -70,6 +71,9 @@ Although it worked perfectly for days, my OS would stop at the splash screen aft
 Ctrl+Alt+[1-9] is the key binding to switch between linux desktops
 
 This is a fun experience if you like being able to manually break and repair your linux by yourself.
+```
+
+
 
 
 After installing dwm, you can choose which window manager you want to use on the (lightdm) login screen.
