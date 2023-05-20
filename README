@@ -70,7 +70,7 @@ If you already have the requirements to build dwm, you can install it from the s
 ```
 sudo make clean install
 ```
-Note: I am not completely sure sudo is required
+
 
 
 To setup your own background wallpaper, see the Background section below.
