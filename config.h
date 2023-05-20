@@ -69,34 +69,62 @@ static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	// spawn process shortcuts (mid priority)
+	//(todo: firefox, task manager, virt-manager)
+	// (also: text editor/IDE/emacs, wallet,...)
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+
+	// navigation (high priority)
+	// navigation
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	// navigation
+	{ MODKEY,                       XK_Return, zoom,           {0} },
+	// navigation (remove ?)
+	{ MODKEY,                       XK_Tab,    view,           {0} },
+	// navigation
+	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+
+	
+	// layout parameters (lower priority)
+	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	// layout parameters (common)
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	// layout parameters
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+
+	// layout style (mid priority)
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
+	// layout style
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
+	// layout control
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	// layout style parameters
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+
+
+	// not used (can remove)
+	// does not work
+	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	// cannot be used (multi-monitor setup)
+	/*
+	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	// same, move window between screens
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	*/
+	// does not work, try to fix by not using TAGKEYS
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -106,7 +134,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+
+	// navigation
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	// navigation
 	{ MODKEY,                       XK_i,      shiftview,      { .i = +1 } },
 	{ MODKEY,                       XK_u,      shiftview,      { .i = -1 } },
 };

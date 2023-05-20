@@ -3,6 +3,7 @@ custom dwm setup
 This repository includes dwm and the modifications I made for my setup.
 
 I used this to patch my Xubuntu 22 minimal install and replace the lightdm window manager by dwm.
+I also customized the keybindings for my [bépo](https://bepo.fr/wiki/Accueil) keyboard.
 
 
 These include the following patches:
