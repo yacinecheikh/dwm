@@ -1,4 +1,4 @@
-## custom dwm setup
+## custom dwm setup for Xubuntu 22.04 LTS
 
 This repository includes dwm and the modifications I made for my setup.
 
