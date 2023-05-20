@@ -12,6 +12,8 @@ This version of dwm includes the following patches:
  * next prev tag (shiftview.c)
  * fibonacci layout
 
+I also wanted to add defaulttransparency for my terminals, but I couldn't make it work completely.
+
 
 Requirements before building
 ----------------------------
