@@ -54,6 +54,7 @@ Trying dwm without disabling lightdm permanently can be done with the steps:
  * in /etc/X11/default-display-manager, replace the path to lightdm (/usr/sbin/lightdm in my case) with the path to dwm (/usr/bin/dwm after installing dwm)
  * in ~/.xinitrc, write the following lines:
  	```
+ 		numlockx on # do this or you will have to enable the numpad manually each time you run dwm
  		~/.fehbg # if you already used feh to make a background
  		exec dwm
  	```
