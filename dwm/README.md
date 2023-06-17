@@ -2,6 +2,8 @@
 
 This repository includes dwm and the modifications I made for my setup.
 
+The version of dwm used here is not updated with further updates from the suckless team
+
 I used this to patch my Xubuntu 22 light install and use dwm instead of xfce4.
 I also customized the keybindings for my [bépo](https://bepo.fr/wiki/Accueil) keyboard.
 
