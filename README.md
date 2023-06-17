@@ -40,14 +40,13 @@ feh --bg-fill wallpaper.jpg
 For more configuration options, you should check ```man feh``` and type ```/--bg-scale``` to get around the part with the rendering types.
 
 
-
-
 ## Picom
 
 Picom is an Xorg compositor, which is used to add transparency effects in the window rendering.
 
 It is more expansive than its predecessor xcompmgr, but allows more customization and supports the blurring effects with transparent backgrounds
 
-It is configured with ~/.config/picom.conf, or just running picom with --config <picom.conf>.
-Picom will automatically reload the config file if it is changed.
+It can be configured with ~/.config/picom.conf, or by running picom with --config <picom.conf>.
+Picom will automatically reload the config file when changed.
 
+The current picom settings are experimental, and broke things on my GPU-less testing virtual machine.

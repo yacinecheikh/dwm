@@ -1,2 +1,2 @@
-# place this in your home
 ~/.fehbg
+picom --experimental-backends &
