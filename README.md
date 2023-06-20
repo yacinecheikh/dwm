@@ -38,7 +38,7 @@ feh --bg-fill wallpaper.jpg
 ```
 (I didn't include my wallpaper in this repo because I'm afraid of copyright over anime screenshots and because it is easier if you get the correct resolution in the first place)
 
-For more configuration options, you should check ```man feh``` and type ```/--bg-scale``` to get around the part with the rendering types.
+For more configuration options, you should check ```man feh``` and type ```/--bg-scale``` to get around the part with the rendering parameters.
 
 
 ## Picom
