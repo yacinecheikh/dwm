@@ -1,0 +1,7 @@
+#!/bin/sh
+choices=$(cat /dev/stdin)
+
+lines=$(echo "$choices" | wc -l)
+
+echo "$choices" | dmenu -w $WINDOWID -b -l $lines
+
