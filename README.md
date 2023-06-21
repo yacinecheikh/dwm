@@ -9,13 +9,29 @@ Most notable missing features:
 
 # Main contents:
 * st 0.9
+	* alpha 0.8.5<Down>
 * dwm
 	* fibonacci 6.2
 	* fullgaps 6.4
 	* swallow 6.3
 * dmenu 5.2
+	* alpha 5.2 (2023-01-10)
 
-# Other tools
+
+# sh-tools
+
+This directory contains script that i found useful, most of the time very simple.
+
+## menu
+
+This script is a wrapper around dmenu, which automatically spawns dmenu in the current window and renders the choices vertically.
+
+Don't use it as it is, customize it for your preferences and then use an alias to use it instead of dmenu.
+
+I also plan to do something similar for dmenu_run, to whitelist the suggestions in the launch bar.
+
+
+# Config files
 
 ## xprofile
 
