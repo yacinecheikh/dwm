@@ -16,7 +16,7 @@ Most notable missing features:
 	* swallow 6.3
 * dmenu 5.2
 	* alpha 5.2 (2023-01-10)
-* tabbed 0.7
+* tabbed (git cloned)
 
 
 # sh-tools
