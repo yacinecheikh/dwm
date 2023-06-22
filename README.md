@@ -17,6 +17,7 @@ Most notable missing features:
 * dmenu 5.2
 	* alpha 5.2 (2023-01-10)
 * tabbed 0.7
+	* alpha (28 Feb 2017)
 
 
 # sh-tools
