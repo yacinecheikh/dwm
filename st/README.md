@@ -2,7 +2,7 @@
 
 ### Patches
 * alpha 0.8.5
-
+* delkey (planned, the patch requires manual tinkering)
 
 ### Install
 
